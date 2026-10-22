@@ -123,7 +123,7 @@ export default function ProfilePage() {
             {/* 1. Fokie Points Header & Rules */}
             <div className="flex flex-col gap-3">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-transparent pb-1 gap-2">
-                <h2 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-tight">
+                <h2 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
                   FOKIE POINTS
                 </h2>
                 <span className="text-[12px] text-[#6c5a61] font-semibold tracking-[0.72px] uppercase">

@@ -91,7 +91,7 @@ export default function SectionTemplate({
               </nav>
 
               {/* Title */}
-              <h1 className="text-[64px] md:text-[100px] lg:text-[130px] font-black leading-none font-display text-[#b51d42] uppercase tracking-tight">
+              <h1 className="text-[64px] md:text-[100px] lg:text-[130px] font-black leading-none font-display text-[#b51d42] uppercase tracking-wide">
                 {categoryName}
               </h1>
 

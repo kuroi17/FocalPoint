@@ -38,7 +38,7 @@ export default function StaffPage() {
       <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 md:px-[100px] pt-8 md:pt-[40px] pb-16">
         {/* Title bar */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-transparent pb-3 gap-2">
-          <h1 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-tight">
+          <h1 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
             STAFF DESK
           </h1>
           <span className="text-[11px] font-bold text-[#6c5a61] tracking-[0.66px] uppercase">
@@ -135,7 +135,7 @@ export default function StaffPage() {
             )}
 
             {/* Title */}
-            <h2 className="text-[46px] md:text-[62px] font-black text-[#b51d42] font-display leading-[0.88] tracking-tight">
+            <h2 className="text-[46px] md:text-[62px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
               WRITE ARTICLE
             </h2>
 

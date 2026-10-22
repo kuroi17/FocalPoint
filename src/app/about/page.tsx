@@ -48,7 +48,7 @@ export default function AboutPage() {
                 <span className="absolute -bottom-[5px] -left-[5px] w-[10px] h-[10px] bg-white border border-[#b51d42]" />
                 <span className="absolute -bottom-[5px] -right-[5px] w-[10px] h-[10px] bg-white border border-[#b51d42]" />
                 
-                <h1 className="text-[54px] md:text-[80px] font-black leading-none font-display text-white tracking-tight">
+                <h1 className="text-[54px] md:text-[80px] font-black leading-none font-display text-white tracking-wide">
                   FOCALPOINT
                 </h1>
               </div>
@@ -224,7 +224,7 @@ export default function AboutPage() {
 
           {activeTab === "join" && (
             <div className="p-8 rounded-[8px] bg-[#b51d42] text-white flex flex-col items-center text-center gap-4 my-6">
-              <h2 className="text-[36px] font-black font-display tracking-tight">
+              <h2 className="text-[36px] font-black font-display tracking-wide">
                 BECOME A FOCALCREW MEMBER
               </h2>
               <p className="text-[16px] text-white/90 max-w-[600px] leading-relaxed">

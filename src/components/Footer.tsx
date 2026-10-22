@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           {/* About publication */}
           <div className="md:col-span-5 flex flex-col gap-[10px]">
-            <h2 className="text-[36px] font-black tracking-tight text-white font-display">
+            <h2 className="text-[36px] font-black tracking-wide text-white font-display">
               FOCALPOINT
             </h2>
             <p className="text-[14px] leading-[1.5] text-[#e3d3d8] tracking-[-0.14px] max-w-[420px]">

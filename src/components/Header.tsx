@@ -30,7 +30,7 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-[20px] md:text-[22px] font-extrabold text-[#b51d42] tracking-[-0.66px] leading-tight font-display">
+            <span className="text-[20px] md:text-[22px] font-black text-[#b51d42] tracking-[-0.66px] leading-tight font-sans">
               FOCALPOINT
             </span>
             <span className="hidden md:block text-[10.5px] font-medium text-[#6c5a61] tracking-[-0.1px] leading-tight">

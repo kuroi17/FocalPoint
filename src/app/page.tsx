@@ -59,7 +59,7 @@ export default function HomePage() {
                 </div>
 
                 {/* Section kicker */}
-                <h1 className="text-[96px] md:text-[140px] font-black leading-[0.86] text-[#a8283f] font-display tracking-tight z-10">
+                <h1 className="text-[96px] md:text-[140px] font-black leading-[0.86] text-[#a8283f] font-display tracking-wide z-10">
                   NEWS
                 </h1>
 
@@ -135,7 +135,7 @@ export default function HomePage() {
 
             {/* Top Stories (300px width on desktop) */}
             <div className="lg:col-span-3 flex flex-col gap-4">
-              <h3 className="text-[28px] font-black text-[#2b2226] font-display tracking-tight">
+              <h3 className="text-[28px] font-black text-[#2b2226] font-display tracking-wide">
                 TOP STORIES
               </h3>
 
@@ -213,7 +213,7 @@ export default function HomePage() {
         ========================================================== */}
         <section className="w-full max-w-[1440px] px-5 md:px-[100px] py-8">
           <div className="flex items-baseline justify-between mb-6">
-            <h2 className="text-[32px] md:text-[44px] font-black text-[#b51d42] font-display tracking-tight">
+            <h2 className="text-[32px] md:text-[44px] font-black text-[#b51d42] font-display tracking-wide">
               LATEST BY SECTION
             </h2>
             <span className="hidden md:inline text-[13px] text-[#6c5a61]">
@@ -664,7 +664,7 @@ export default function HomePage() {
         ========================================================== */}
         <section className="w-full max-w-[1440px] px-5 md:px-[100px] py-10">
           <div className="flex items-baseline justify-between mb-2">
-            <h2 className="text-[32px] md:text-[44px] font-black text-[#b51d42] font-display tracking-tight">
+            <h2 className="text-[32px] md:text-[44px] font-black text-[#b51d42] font-display tracking-wide">
               EXPLORE OUR DESKS
             </h2>
             <Link href="/about#desks" className="text-[14px] font-semibold text-[#b51d42] hover:underline">
@@ -842,7 +842,7 @@ export default function HomePage() {
           <div className="w-full max-w-[1240px] grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
             
             <div className="md:col-span-8 flex flex-col gap-4">
-              <h2 className="text-[44px] md:text-[68px] font-black leading-none font-display text-white tracking-tight">
+              <h2 className="text-[44px] md:text-[68px] font-black leading-none font-display text-white tracking-wide">
                 CALL FOR FOCALCREWS
               </h2>
               <p className="text-[16px] md:text-[18px] text-white/90 leading-relaxed max-w-[600px]">
