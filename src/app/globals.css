@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --color-crimson: #b51d42;
+    --color-pubcrimson: #a8283f;
+    --color-rose: #e0506a;
+    --color-blush: #ffe1e5;
+    --color-soft: #fff4f5;
+    --color-line: #f1c9d0;
+    --color-gold: #fce192;
+    --color-ink: #2b2226;
+    --color-muted: #6c5a61;
+    --color-paper: #ffffff;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.font-display {
+  font-family: 'Psilograph', 'Anton', 'Bebas Neue', Impact, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-editorial {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Inter", sans-serif;
+}
