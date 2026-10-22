@@ -65,7 +65,10 @@ export default function Header() {
           </button>
 
           {/* Fokie Points */}
-          <div className="bg-[#fdefc6] border-[1.5px] border-[#fce192] flex items-center gap-[6px] pl-[6px] pr-[12px] py-[5px] rounded-full shrink-0">
+          <Link
+            href="/profile"
+            className="bg-[#fdefc6] border-[1.5px] border-[#fce192] flex items-center gap-[6px] pl-[6px] pr-[12px] py-[5px] rounded-full shrink-0 hover:bg-[#fae7b0] transition"
+          >
             <img
               src="/assets/24987dedda14882f36c592ac42e7434ff030c7a3.png"
               alt="Points"
@@ -75,7 +78,7 @@ export default function Header() {
               <span className="hidden md:inline">5 pts</span>
               <span className="inline md:hidden">5</span>
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Notification Bell */}
           <button className="hidden md:block text-[#6c5a61] hover:text-[#b51d42] transition-colors p-1">
@@ -87,13 +90,16 @@ export default function Header() {
           </button>
 
           {/* User Avatar */}
-          <div className="w-[40px] h-[40px] rounded-full border-2 border-[#e0506a] bg-[#ffe1e5] overflow-hidden shrink-0">
+          <Link
+            href="/profile"
+            className="w-[40px] h-[40px] rounded-full border-2 border-[#e0506a] bg-[#ffe1e5] overflow-hidden shrink-0 hover:scale-105 transition-transform"
+          >
             <img
               src="/assets/9e8c16262bf6b93dad03aea9ee33c2d6199bd585.png"
               alt="User Avatar"
               className="w-full h-full object-cover"
             />
-          </div>
+          </Link>
         </div>
       </div>
 
@@ -155,9 +161,27 @@ export default function Header() {
         >
           About
         </Link>
-        <span className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap cursor-pointer shrink-0">
-          More ▾
-        </span>
+        
+        {/* More dropdown */}
+        <div className="relative group shrink-0">
+          <button className="px-[9px] py-[7px] text-[14px] font-semibold text-[#b51d42] underline hover:text-[#961735] tracking-[-0.14px] whitespace-nowrap cursor-pointer flex items-center gap-1">
+            More ▾
+          </button>
+          <div className="absolute right-0 top-full mt-1 hidden group-hover:flex flex-col bg-white border border-[#f1c9d0] rounded shadow-lg z-50 min-w-[140px] py-1">
+            <Link href="/podcasts" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
+              Podcasts
+            </Link>
+            <Link href="/community" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
+              Community
+            </Link>
+            <Link href="/staff" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
+              Staff Desk
+            </Link>
+            <Link href="/profile" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
+              My Profile
+            </Link>
+          </div>
+        </div>
       </nav>
     </header>
   );
