@@ -13,7 +13,7 @@ export default function PageLoader() {
     setLoading(true);
     setIsSweeping(false);
 
-    // Keep visible for ~2.2s so the user can enjoy the floating feather effects
+    // Keep visible for ~2.3s so the user can enjoy the floating wind feather effects
     const sweepTimer = setTimeout(() => {
       setIsSweeping(true);
 
@@ -23,7 +23,7 @@ export default function PageLoader() {
       }, 850);
 
       return () => clearTimeout(exitTimer);
-    }, 2200);
+    }, 2300);
 
     return () => clearTimeout(sweepTimer);
   }, [pathname]);
@@ -46,15 +46,15 @@ export default function PageLoader() {
       {/* Container for responsive floating feathers based on 1440x900 Figma frame */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
         <div className="relative w-[1440px] h-[900px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.65] sm:scale-[0.8] md:scale-95 lg:scale-100 transition-transform origin-center">
-          {/* Pair 1 */}
-          <div className="absolute flex h-[40.598px] items-center justify-center left-[-41.38px] top-[20px] w-[57.692px] animate-feather-float-slow">
+          {/* Pair 1 - Top Left */}
+          <div className="absolute flex h-[40.598px] items-center justify-center left-[-41.38px] top-[20px] w-[57.692px] animate-wind-1">
             <div className="flex-none rotate-60">
               <div className="h-[59.328px] relative w-[12.625px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/3f3c0d1c4e1c7e1cd2f45025bb263be21340b4cc.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[53px] items-center justify-center left-[-81.8px] top-[20px] w-[91.799px] animate-feather-float-slow">
+          <div className="absolute flex h-[53px] items-center justify-center left-[-81.8px] top-[20px] w-[91.799px] animate-wind-1" style={{ animationDelay: "0.3s" }}>
             <div className="flex-none rotate-60">
               <div className="h-[106px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -64,15 +64,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 2 */}
-          <div className="absolute flex h-[75.809px] items-center justify-center left-[130.32px] top-[283px] w-[32.059px] animate-feather-float-fast" style={{ animationDelay: "0.4s" }}>
+          {/* Pair 2 - Mid Left */}
+          <div className="absolute flex h-[75.809px] items-center justify-center left-[130.32px] top-[283px] w-[32.059px] animate-wind-2" style={{ animationDelay: "0.6s" }}>
             <div className="flex-none rotate-13">
               <div className="h-[74.16px] relative w-[15.782px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/a7ca0ccb4163a3d767241a31366d1892cac4c779.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[48px] items-center justify-center left-[134px] top-[328px] w-[11.846px] animate-feather-float-fast" style={{ animationDelay: "0.4s" }}>
+          <div className="absolute flex h-[48px] items-center justify-center left-[134px] top-[328px] w-[11.846px] animate-wind-2" style={{ animationDelay: "0.8s" }}>
             <div className="flex-none rotate-[13.86deg]">
               <div className="h-[49.44px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -82,15 +82,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 3 */}
-          <div className="absolute flex h-[84.368px] items-center justify-center left-[284px] top-[535.41px] w-[65.464px] animate-feather-float-slow" style={{ animationDelay: "0.8s" }}>
+          {/* Pair 3 - Bottom Left */}
+          <div className="absolute flex h-[84.368px] items-center justify-center left-[284px] top-[535.41px] w-[65.464px] animate-wind-3" style={{ animationDelay: "1.2s" }}>
             <div className="-rotate-34 flex-none">
               <div className="h-[88.992px] relative w-[18.938px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/262db49d597976982df8101ecf93175bdd3d9475.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[54px] items-center justify-center left-[317px] top-[578px] w-[38px] animate-feather-float-slow" style={{ animationDelay: "0.8s" }}>
+          <div className="absolute flex h-[54px] items-center justify-center left-[317px] top-[578px] w-[38px] animate-wind-3" style={{ animationDelay: "1.4s" }}>
             <div className="flex-none rotate-[-35.13deg]">
               <div className="h-[66.03px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -100,15 +100,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 4 */}
-          <div className="absolute flex h-[60.808px] items-center justify-center left-[379px] top-[49px] w-[53.042px] animate-feather-float-fast" style={{ animationDelay: "1.2s" }}>
+          {/* Pair 4 - Top Center-Left */}
+          <div className="absolute flex h-[60.808px] items-center justify-center left-[379px] top-[49px] w-[53.042px] animate-wind-1" style={{ animationDelay: "1.8s" }}>
             <div className="flex-none rotate-39">
               <div className="h-[66.744px] relative w-[14.203px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/85334f4303240a0de6b73886053048f01e077373.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[47px] items-center justify-center left-[373px] top-[74px] w-[36.707px] animate-feather-float-fast" style={{ animationDelay: "1.2s" }}>
+          <div className="absolute flex h-[47px] items-center justify-center left-[373px] top-[74px] w-[36.707px] animate-wind-1" style={{ animationDelay: "2.0s" }}>
             <div className="flex-none rotate-[37.99deg]">
               <div className="h-[59.636px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -118,15 +118,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 5 */}
-          <div className="absolute flex h-[83.198px] items-center justify-center left-[558px] top-[309.58px] w-[28.544px] animate-feather-float-slow" style={{ animationDelay: "0.3s" }}>
+          {/* Pair 5 - Center-Left */}
+          <div className="absolute flex h-[83.198px] items-center justify-center left-[558px] top-[309.58px] w-[28.544px] animate-wind-2" style={{ animationDelay: "0.5s" }}>
             <div className="-rotate-8 flex-none">
               <div className="h-[81.576px] relative w-[17.36px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/1d86738267cad2dc1a913f403b42887acde40e12.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[55px] items-center justify-center left-[575px] top-[356px] w-[5px] animate-feather-float-slow" style={{ animationDelay: "0.3s" }}>
+          <div className="absolute flex h-[55px] items-center justify-center left-[575px] top-[356px] w-[5px] animate-wind-2" style={{ animationDelay: "0.7s" }}>
             <div className="flex-none rotate-[-5.19deg]">
               <div className="h-[55.227px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -136,15 +136,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 6 */}
-          <div className="absolute flex h-[44.371px] items-center justify-center left-[695px] top-[564.66px] w-[55.84px] animate-feather-float-fast" style={{ animationDelay: "0.9s" }}>
+          {/* Pair 6 - Center-Bottom */}
+          <div className="absolute flex h-[44.371px] items-center justify-center left-[695px] top-[564.66px] w-[55.84px] animate-wind-3" style={{ animationDelay: "1.0s" }}>
             <div className="-rotate-55 flex-none">
               <div className="h-[59.328px] relative w-[12.625px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/dcff0263c6caed9556304dcf89e0eb841b96d32b.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[20px] items-center justify-center left-[728px] top-[589px] w-[26px] animate-feather-float-fast" style={{ animationDelay: "0.9s" }}>
+          <div className="absolute flex h-[20px] items-center justify-center left-[728px] top-[589px] w-[26px] animate-wind-3" style={{ animationDelay: "1.2s" }}>
             <div className="flex-none rotate-[-52.43deg]">
               <div className="h-[32.802px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -154,15 +154,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 7 */}
-          <div className="absolute flex h-[75.407px] items-center justify-center left-[809.08px] top-[78px] w-[37.926px] animate-feather-float-slow" style={{ animationDelay: "0.6s" }}>
+          {/* Pair 7 - Top Center-Right */}
+          <div className="absolute flex h-[75.407px] items-center justify-center left-[809.08px] top-[78px] w-[37.926px] animate-wind-1" style={{ animationDelay: "0.9s" }}>
             <div className="flex-none rotate-18">
               <div className="h-[74.16px] relative w-[15.782px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/3cef90e08d0e690d4a62ced8e04989450fbc42e6.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[57px] items-center justify-center left-[809px] top-[116px] w-[18.756px] animate-feather-float-slow" style={{ animationDelay: "0.6s" }}>
+          <div className="absolute flex h-[57px] items-center justify-center left-[809px] top-[116px] w-[18.756px] animate-wind-1" style={{ animationDelay: "1.1s" }}>
             <div className="flex-none rotate-[18.21deg]">
               <div className="h-[60.007px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -172,15 +172,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 8 */}
-          <div className="absolute flex h-[87.015px] items-center justify-center left-[969px] top-[331.82px] w-[59.708px] animate-feather-float-fast" style={{ animationDelay: "1.1s" }}>
+          {/* Pair 8 - Center-Right */}
+          <div className="absolute flex h-[87.015px] items-center justify-center left-[969px] top-[331.82px] w-[59.708px] animate-wind-2" style={{ animationDelay: "1.5s" }}>
             <div className="-rotate-29 flex-none">
               <div className="h-[88.992px] relative w-[18.938px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/be0f471a09abefd9a1b03a25e52737ee72e87d15.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[54px] items-center justify-center left-[999px] top-[375px] w-[30px] animate-feather-float-fast" style={{ animationDelay: "1.1s" }}>
+          <div className="absolute flex h-[54px] items-center justify-center left-[999px] top-[375px] w-[30px] animate-wind-2" style={{ animationDelay: "1.7s" }}>
             <div className="flex-none rotate-[-29.05deg]">
               <div className="h-[61.774px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -190,15 +190,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 9 */}
-          <div className="absolute flex h-[57.878px] items-center justify-center left-[1059.64px] top-[604px] w-[56.581px] animate-feather-float-slow" style={{ animationDelay: "0.5s" }}>
+          {/* Pair 9 - Bottom Right */}
+          <div className="absolute flex h-[57.878px] items-center justify-center left-[1059.64px] top-[604px] w-[56.581px] animate-wind-3" style={{ animationDelay: "0.7s" }}>
             <div className="flex-none rotate-44">
               <div className="h-[66.744px] relative w-[14.203px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/274b06a2517493f00bd799793b8b5e7b049703b5.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[43px] items-center justify-center left-[1057px] top-[624px] w-[39.633px] animate-feather-float-slow" style={{ animationDelay: "0.5s" }}>
+          <div className="absolute flex h-[43px] items-center justify-center left-[1057px] top-[624px] w-[39.633px] animate-wind-3" style={{ animationDelay: "0.9s" }}>
             <div className="flex-none rotate-[42.67deg]">
               <div className="h-[58.479px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -208,15 +208,15 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Pair 10 */}
-          <div className="absolute flex h-[82.373px] items-center justify-center left-[1243px] top-[106.09px] w-[21.605px] animate-feather-float-fast" style={{ animationDelay: "0.2s" }}>
+          {/* Pair 10 - Top Right */}
+          <div className="absolute flex h-[82.373px] items-center justify-center left-[1243px] top-[106.09px] w-[21.605px] animate-wind-1" style={{ animationDelay: "0.4s" }}>
             <div className="-rotate-3 flex-none">
               <div className="h-[81.576px] relative w-[17.36px]">
                 <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/1af488c20684d66d09081a7eb9443595b4b8eef7.svg" />
               </div>
             </div>
           </div>
-          <div className="absolute flex h-[105.855px] items-center justify-center left-[1243px] top-[107px] w-[5.548px] animate-feather-float-fast" style={{ animationDelay: "0.2s" }}>
+          <div className="absolute flex h-[105.855px] items-center justify-center left-[1243px] top-[107px] w-[5.548px] animate-wind-1" style={{ animationDelay: "0.6s" }}>
             <div className="-rotate-3 flex-none">
               <div className="h-[106px] relative w-0">
                 <div className="absolute inset-[0_-0.7px]">
@@ -226,12 +226,12 @@ export default function PageLoader() {
             </div>
           </div>
 
-          {/* Static presence of the sweep feather in background when not yet sweeping */}
+          {/* Giant sweep feather in background on right with gentle breeze sway */}
           {!isSweeping && (
-            <div className="absolute flex h-[947.188px] items-center justify-center left-[1015.74px] top-[-60px] w-[415.672px] opacity-80 pointer-events-none">
-              <div className="flex-none rotate-14">
+            <div className="absolute flex h-[947.188px] items-center justify-center left-[1015.74px] top-[-60px] w-[415.672px] pointer-events-none">
+              <div className="flex-none animate-big-feather-sway">
                 <div className="h-[927px] relative w-[197.27px]">
-                  <img alt="" className="absolute block inset-0 max-w-none size-full" src="/assets/a5e816c5740dcf4f791a38b2d52b37662dcdf21b.svg" />
+                  <img alt="" className="absolute block inset-0 max-w-none size-full opacity-90" src="/assets/a5e816c5740dcf4f791a38b2d52b37662dcdf21b.svg" />
                 </div>
               </div>
             </div>
@@ -239,9 +239,9 @@ export default function PageLoader() {
         </div>
       </div>
 
-      {/* Central Content: Ring, Spinner, Logo & Title */}
-      <div className="relative z-10 flex flex-col items-center justify-center gap-6">
-        <div className="relative size-[118px] flex items-center justify-center">
+      {/* Central Content: Ring, Spinner, Logo & Title - ALWAYS DEAD CENTER */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-6 pointer-events-none px-4">
+        <div className="relative size-[118px] flex items-center justify-center shrink-0">
           {/* Outer ring */}
           <img
             alt=""
@@ -271,7 +271,7 @@ export default function PageLoader() {
         </div>
 
         {/* Text */}
-        <h2 className="font-display font-black text-[28px] sm:text-[34px] md:text-[36px] text-[#b51d42] leading-[0.88] whitespace-nowrap uppercase tracking-normal">
+        <h2 className="font-display font-black text-[26px] sm:text-[32px] md:text-[36px] text-[#b51d42] leading-[0.88] whitespace-nowrap uppercase tracking-normal text-center">
           BRINGING STORIES INTO FOCUS…
         </h2>
       </div>
@@ -292,7 +292,7 @@ export default function PageLoader() {
       )}
 
       {/* Bottom design note from Figma */}
-      <p className="absolute bottom-5 left-6 font-sans text-[12px] text-[#6c5a61] tracking-[-0.12px] hidden sm:block">
+      <p className="absolute bottom-5 left-6 font-sans text-[12px] text-[#6c5a61] tracking-[-0.12px] hidden sm:block pointer-events-none">
         Exit: the big feather sweeps left to right and wipes this screen away.
       </p>
     </div>
