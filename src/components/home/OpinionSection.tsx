@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function OpinionSection() {
   return (
-    <section className="w-full bg-[#fff4f5] py-[64px] px-5 md:px-[100px] flex justify-center">
+    <section className="w-full bg-[#fff4f5] py-[64px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] flex justify-center">
       <div className="w-full max-w-[1240px] flex flex-col gap-[24px]">
         <div className="inline-block">
           <span className="bg-[#b51d42] text-white text-[11px] font-bold tracking-[0.88px] px-[8px] py-[6px] uppercase font-sans">

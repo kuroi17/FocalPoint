@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function CommunityHeader() {
   return (
     <div
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] pt-[40px] pb-[20px]"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-[40px] pb-[20px]"
       data-node-id="11:1239"
       data-name="page head"
     >
@@ -31,7 +31,7 @@ export default function CommunityHeader() {
 
           {/* Page Title: COMMUNITY */}
           <h1
-            className="font-display font-black leading-[0.88] text-[68px] sm:text-[110px] md:text-[150px] lg:text-[210px] text-[#b51d42] tracking-tight select-none"
+            className="font-display font-black leading-[0.88] text-[56px] sm:text-[90px] md:text-[120px] lg:text-[160px] xl:text-[210px] text-[#b51d42] tracking-tight select-none"
             data-node-id="11:1243"
           >
             COMMUNITY

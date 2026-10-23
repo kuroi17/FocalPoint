@@ -17,7 +17,7 @@ export default function PodcastMiniPlayer({
 }: PodcastMiniPlayerProps) {
   return (
     <div
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] pb-[40px] flex flex-col items-start"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pb-[40px] flex flex-col items-start"
       data-node-id="10:1176"
       data-name="mini player"
     >

@@ -39,7 +39,7 @@ export default function ArticleHeader({
 
   return (
     <header
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] lg:px-[280px] pt-[40px] pb-[24px] flex flex-col gap-[12px] items-start"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-[280px] pt-8 md:pt-[40px] pb-[24px] flex flex-col gap-[12px] items-start"
       data-node-id="6:552"
       data-name="article head"
     >

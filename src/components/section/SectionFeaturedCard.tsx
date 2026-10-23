@@ -26,13 +26,13 @@ export default function SectionFeaturedCard({
 }: SectionFeaturedCardProps) {
   return (
     <div
-      className="border-[#f1c9d0] border-b border-solid flex flex-col lg:flex-row gap-[32px] items-stretch lg:items-center pb-[40px] w-full max-w-[1240px] mx-auto"
+      className="border-[#f1c9d0] border-b border-solid flex flex-col lg:flex-row gap-6 lg:gap-[32px] items-stretch pb-[40px] w-full max-w-[1240px] mx-auto overflow-hidden"
       data-node-id="6:379"
       data-name="featured"
     >
       {/* Lead Photo Column (3:2 ratio) */}
       <div
-        className="w-full lg:w-[720px] h-[320px] sm:h-[400px] lg:h-[480px] shrink-0 rounded-[4px] relative overflow-hidden"
+        className="w-full lg:flex-1 min-w-0 xl:max-w-[720px] h-[300px] sm:h-[380px] md:h-[420px] lg:h-[480px] rounded-[4px] relative overflow-hidden"
         style={{ backgroundImage: photoGradient }}
         data-node-id="6:380"
         data-name="photo"
@@ -49,7 +49,7 @@ export default function SectionFeaturedCard({
 
       {/* Pub Box Column */}
       <div
-        className="w-full lg:w-[488px] min-h-[465px] lg:h-[480px] shrink-0 relative border-[1.5px] border-[#e0506a] border-solid px-[26px] py-[34px] flex flex-col justify-between overflow-hidden bg-white"
+        className="w-full lg:w-[420px] xl:w-[488px] min-h-[440px] lg:h-[480px] lg:shrink-0 relative border-[1.5px] border-[#e0506a] border-solid px-6 sm:px-8 xl:px-[26px] py-6 sm:py-8 xl:py-[34px] flex flex-col justify-between overflow-hidden bg-white"
         style={{
           backgroundImage:
             "radial-gradient(circle at 95% 95%, rgba(253,240,207,1) 0%, rgba(253,240,207,0) 60%), radial-gradient(circle at 5% 5%, rgba(251,225,230,1) 0%, rgba(251,225,230,0) 50%), #ffffff",
@@ -79,7 +79,7 @@ export default function SectionFeaturedCard({
         <div className="flex flex-col gap-[14px] items-start z-10">
           {/* Card Title */}
           <h2
-            className="font-display font-black leading-[0.86] text-[72px] sm:text-[110px] lg:text-[167px] text-[#a8283f] not-italic whitespace-nowrap tracking-wide select-none"
+            className="font-display font-black leading-[0.86] text-[64px] sm:text-[96px] md:text-[110px] lg:text-[126px] xl:text-[167px] text-[#a8283f] not-italic whitespace-nowrap tracking-wide select-none"
             data-node-id="6:384"
           >
             {cardTitle}

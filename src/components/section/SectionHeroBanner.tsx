@@ -20,7 +20,7 @@ export default function SectionHeroBanner({
 }: SectionHeroBannerProps) {
   return (
     <section
-      className="w-full bg-[rgba(192,48,79,0.12)] border-[#c0304f] border-b-4 border-solid px-5 sm:px-8 md:px-[100px] py-[40px]"
+      className="w-full bg-[rgba(192,48,79,0.12)] border-[#c0304f] border-b-4 border-solid px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-6 sm:py-8 md:py-[40px]"
       data-node-id="6:362"
       data-name="section header"
     >
@@ -36,7 +36,7 @@ export default function SectionHeroBanner({
           </nav>
 
           {/* Large Section Display Title */}
-          <h1 className="font-display font-black leading-[0.88] not-italic text-[#c0304f] text-[72px] sm:text-[140px] md:text-[200px] lg:text-[252px] whitespace-nowrap tracking-wide select-none">
+          <h1 className="font-display font-black leading-[0.88] not-italic text-[#c0304f] text-[52px] sm:text-[90px] md:text-[130px] lg:text-[180px] xl:text-[240px] tracking-wide select-none">
             {categoryName.toUpperCase()}
           </h1>
 

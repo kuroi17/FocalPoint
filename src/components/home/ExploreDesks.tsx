@@ -60,9 +60,9 @@ export default function ExploreDesks() {
   ];
 
   return (
-    <section className="w-full max-w-[1440px] px-5 md:px-[100px] pb-[64px]">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
+    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pb-[64px]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+        <h2 className="text-[36px] sm:text-[52px] md:text-[64px] lg:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
           EXPLORE OUR DESKS
         </h2>
         <Link

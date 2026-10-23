@@ -126,7 +126,7 @@ export default function ScreensDirectoryPage() {
     <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-[#ffe1e5] selection:text-[#b51d42]">
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[100px] pt-8 lg:pt-[40px] pb-16 flex flex-col gap-8">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-8 lg:pt-[40px] pb-16 flex flex-col gap-8">
         {/* Title bar */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b border-[#f1c9d0] pb-4 gap-2">
           <div>

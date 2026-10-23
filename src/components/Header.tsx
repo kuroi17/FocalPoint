@@ -2,12 +2,23 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/news?q=${encodeURIComponent(searchQuery.trim())}`);
+      setIsMobileSearchOpen(false);
+    }
+  };
 
   // Close dropdown on click outside
   useEffect(() => {
@@ -95,7 +106,7 @@ export default function Header() {
   return (
     <header className="w-full bg-white select-none relative z-40">
       {/* 1. Greeting strip */}
-      <div className="w-full bg-[#b51d42] text-white flex items-center justify-between px-5 md:px-[100px] py-[7px]">
+      <div className="w-full bg-[#b51d42] text-white flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-[7px]">
         <p className="text-[13px] font-normal tracking-tight">
           <span className="font-bold">{greetingInfo.greeting}</span>
           <span className="hidden md:inline font-normal">
@@ -110,7 +121,7 @@ export default function Header() {
       </div>
 
       {/* 2. Top bar */}
-      <div className="w-full flex items-center justify-between gap-[10px] md:gap-[14px] px-5 md:px-[100px] py-[12px]">
+      <div className="w-full flex items-center justify-between gap-[10px] md:gap-[14px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-[12px]">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-[10px]">
           <div className="w-[38px] h-[38px] relative shrink-0">
@@ -132,26 +143,42 @@ export default function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          {/* Desktop Search bar */}
-          <div className="hidden md:flex items-center gap-2 bg-[#fff4f5] border-[1.5px] border-[#f1c9d0] rounded-full px-[14px] py-[9px] w-[250px]">
-            <img
-              src="/assets/6eb8cd8bdce040d8b1429d87cf7780f143b6df03.svg"
-              alt="Search"
-              className="w-[18px] h-[18px]"
-            />
+          {/* Desktop & Tablet Search bar */}
+          <form
+            onSubmit={handleSearch}
+            className="hidden md:flex items-center gap-2 bg-[#fff4f5] border-[1.5px] border-[#f1c9d0] rounded-full px-[14px] py-[8px] w-[180px] lg:w-[250px] transition-all focus-within:border-[#b51d42]"
+          >
+            <button
+              type="submit"
+              className="p-0 border-none bg-transparent cursor-pointer flex items-center"
+              aria-label="Submit search"
+            >
+              <img
+                src="/assets/6eb8cd8bdce040d8b1429d87cf7780f143b6df03.svg"
+                alt="Search"
+                className="w-[18px] h-[18px]"
+              />
+            </button>
             <input
               type="text"
-              placeholder="Search stories, desks, people"
-              className="w-full bg-transparent text-[14px] text-[#6c5a61] tracking-[-0.14px] placeholder:text-[#6c5a61] outline-none"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search stories, desks..."
+              className="w-full bg-transparent text-[13px] lg:text-[14px] text-[#6c5a61] tracking-[-0.14px] placeholder:text-[#6c5a61] outline-none"
             />
-          </div>
+          </form>
 
-          {/* Mobile Search Icon */}
-          <button className="md:hidden p-1 text-[#6c5a61]">
+          {/* Mobile Search Icon Toggle */}
+          <button
+            type="button"
+            onClick={() => setIsMobileSearchOpen(!isMobileSearchOpen)}
+            className="md:hidden p-1.5 text-[#6c5a61] hover:text-[#b51d42] rounded-full active:bg-[#fff4f5]"
+            aria-label="Toggle mobile search"
+          >
             <img
               src="/assets/6eb8cd8bdce040d8b1429d87cf7780f143b6df03.svg"
               alt="Search"
-              className="w-[18px] h-[18px]"
+              className="w-[20px] h-[20px]"
             />
           </button>
 
@@ -194,8 +221,44 @@ export default function Header() {
         </div>
       </div>
 
-      {/* 3. Navigation bar */}
-      <nav className="w-full border-t border-b border-[#f1c9d0] px-3 md:px-[92px] py-[6px] flex items-center gap-[2px] overflow-x-auto md:overflow-visible scrollbar-none relative">
+      {/* 3. Mobile Expandable Search Bar */}
+      {isMobileSearchOpen && (
+        <form
+          onSubmit={handleSearch}
+          className="md:hidden w-full px-4 py-2.5 bg-[#fff4f5] border-t border-b border-[#f1c9d0] flex items-center gap-2 animate-in fade-in slide-in-from-top-1 duration-200"
+        >
+          <img
+            src="/assets/6eb8cd8bdce040d8b1429d87cf7780f143b6df03.svg"
+            alt="Search"
+            className="w-[18px] h-[18px] shrink-0"
+          />
+          <input
+            type="text"
+            autoFocus
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search stories, desks, people..."
+            className="flex-1 bg-transparent text-[14px] text-[#2b2226] outline-none"
+          />
+          <button
+            type="submit"
+            className="bg-[#b51d42] text-white text-[12px] font-bold px-3 py-1 rounded-full shrink-0"
+          >
+            Search
+          </button>
+          <button
+            type="button"
+            onClick={() => setIsMobileSearchOpen(false)}
+            className="text-[#6c5a61] text-[15px] px-1.5 font-bold hover:text-[#b51d42]"
+            aria-label="Close search"
+          >
+            ✕
+          </button>
+        </form>
+      )}
+
+      {/* 4. Navigation bar */}
+      <nav className="w-full border-t border-b border-[#f1c9d0] px-3 sm:px-6 md:px-8 lg:px-12 xl:px-[92px] py-[6px] flex items-center gap-[2px] overflow-x-auto md:overflow-visible scrollbar-none relative">
         {navLinks.map((item) => {
           const active = isLinkActive(item.href);
           return (

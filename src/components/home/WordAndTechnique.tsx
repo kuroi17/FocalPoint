@@ -8,14 +8,14 @@ export default function WordAndTechnique() {
   );
 
   return (
-    <section className="w-full max-w-[1440px] px-5 md:px-[100px] py-[64px]">
+    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-12 md:py-[64px]">
       <div className="flex flex-col md:flex-row gap-[24px] items-stretch w-full">
         {/* Word of the Day (Figma 5:265) */}
-        <div className="bg-[#b51d42] text-white p-[28px] rounded-[4px] flex-1 flex flex-col gap-[12px]">
+        <div className="bg-[#b51d42] text-white p-[24px] sm:p-[28px] rounded-[4px] flex-1 min-w-0 flex flex-col gap-[12px] overflow-hidden">
           <span className="text-[12px] font-bold text-white tracking-[0.96px] uppercase font-sans">
             WORD OF THE DAY
           </span>
-          <h3 className="text-[64px] lg:text-[106px] font-black leading-[0.88] font-display text-white whitespace-nowrap">
+          <h3 className="text-[40px] sm:text-[54px] md:text-[68px] xl:text-[96px] font-black leading-[0.88] font-display text-white whitespace-nowrap select-none">
             CORROBORATE
           </h3>
           <span className="text-[15px] text-white tracking-[-0.15px] font-sans">

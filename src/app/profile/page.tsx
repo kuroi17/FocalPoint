@@ -59,7 +59,7 @@ export default function ProfilePage() {
     <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-[#ffe1e5] selection:text-[#b51d42]">
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[100px] pt-[32px] lg:pt-[40px] pb-[48px] lg:pb-[64px]">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-[32px] lg:pt-[40px] pb-[48px] lg:pb-[64px]">
         <div className="flex flex-col lg:flex-row gap-[32px] items-start w-full">
           {/* LEFT COLUMN: ID Card */}
           <ProfileIdCard activeFrame={activeFrame} points={points} />

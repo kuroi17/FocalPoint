@@ -96,7 +96,7 @@ export default function AboutMeetTheTeam() {
       data-node-id="8:912"
       data-name="meet the team"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] flex flex-col gap-[24px]">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] flex flex-col gap-[24px]">
         {/* Section Head */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 border-b border-transparent pb-1">
           <h2 className="font-display font-black text-[52px] sm:text-[68px] lg:text-[78px] text-[#b51d42] leading-[0.88] tracking-wide">

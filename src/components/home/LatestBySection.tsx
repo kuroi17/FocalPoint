@@ -8,9 +8,9 @@ export default function LatestBySection() {
       <div className="w-full max-w-[1240px] px-5 h-[1.5px] bg-[#e0506a] opacity-70 my-2" />
 
       {/* Latest By Section Container */}
-      <section className="w-full max-w-[1440px] px-5 md:px-[100px] pt-4 pb-[64px]">
+      <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-4 pb-[64px]">
         <div className="flex items-end justify-between mb-8 pb-2">
-          <h2 className="text-[52px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
+          <h2 className="text-[36px] sm:text-[52px] md:text-[64px] lg:text-[78px] font-black text-[#b51d42] font-display leading-[0.88] tracking-wide">
             LATEST BY SECTION
           </h2>
           <span className="hidden md:inline text-[14px] font-bold text-[#b51d42] tracking-[-0.14px]">
@@ -18,9 +18,9 @@ export default function LatestBySection() {
           </span>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-[40px] items-start w-full">
-          {/* Left 880px: News, Feature, Sci-Tech blocks */}
-          <div className="w-full lg:w-[880px] shrink-0 flex flex-col gap-[32px]">
+        <div className="flex flex-col xl:flex-row gap-8 lg:gap-[40px] items-start w-full">
+          {/* Left: News, Feature, Sci-Tech blocks */}
+          <div className="w-full xl:w-[880px] flex-1 min-w-0 flex flex-col gap-[32px]">
             {/* NEWS BLOCK */}
             <div className="flex flex-col gap-[16px] w-full">
               <div className="flex items-center justify-between text-[#c0304f] w-full">
@@ -381,9 +381,9 @@ export default function LatestBySection() {
             </div>
           </div>
 
-          {/* Right 320px: CATCH UP card (Figma 5:211) */}
-          <div className="w-full lg:w-[320px] shrink-0 border-[1.5px] border-[#e0506a] rounded-[4px] p-[18px] bg-white flex flex-col gap-[4px]">
-            <h3 className="text-[42px] font-black text-[#b51d42] font-display leading-[0.88] whitespace-nowrap">
+          {/* Right CATCH UP card (Figma 5:211) */}
+          <div className="w-full xl:w-[320px] xl:shrink-0 border-[1.5px] border-[#e0506a] rounded-[4px] p-[18px] bg-white flex flex-col gap-[4px]">
+            <h3 className="text-[34px] sm:text-[42px] font-black text-[#b51d42] font-display leading-[0.88] whitespace-nowrap">
               CATCH UP
             </h3>
             <p className="text-[13px] text-[#6c5a61] tracking-[-0.13px] font-sans pb-1">

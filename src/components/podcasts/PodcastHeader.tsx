@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function PodcastHeader() {
   return (
     <div
-      className="w-full bg-gradient-to-r from-[#ffe1e5] to-[#fff4f5] px-5 sm:px-8 md:px-[100px] py-[40px]"
+      className="w-full bg-gradient-to-r from-[#ffe1e5] to-[#fff4f5] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-[40px]"
       data-node-id="10:1112"
       data-name="page head"
     >
@@ -31,7 +31,7 @@ export default function PodcastHeader() {
 
           {/* Title: FOCAL TALK */}
           <h1
-            className="font-display font-black leading-[0.88] text-[68px] sm:text-[110px] md:text-[150px] lg:text-[210px] text-[#b51d42] tracking-tight select-none"
+            className="font-display font-black leading-[0.88] text-[56px] sm:text-[90px] md:text-[120px] lg:text-[160px] xl:text-[210px] text-[#b51d42] tracking-tight select-none"
             data-node-id="10:1116"
           >
             FOCAL TALK

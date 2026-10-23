@@ -3,7 +3,7 @@ import React from "react";
 export default function AboutIntro() {
   return (
     <div
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] pt-[34px] pb-[24px]"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-[34px] pb-[24px]"
       data-node-id="8:814"
       data-name="intro"
     >

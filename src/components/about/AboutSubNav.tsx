@@ -29,11 +29,11 @@ export default function AboutSubNav({ activeSection: initialActive }: SubNavProp
 
   return (
     <nav
-      className="sticky top-0 bg-white/95 backdrop-blur-md border-[#f1c9d0] border-b border-solid w-full z-40 px-5 sm:px-8 md:px-[92px] overflow-x-auto scrollbar-none"
+      className="sticky top-0 bg-white/95 backdrop-blur-md border-[#f1c9d0] border-b border-solid w-full z-40 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[92px] overflow-x-auto scrollbar-none"
       data-node-id="8:819"
       data-name="about menu"
     >
-      <div className="max-w-[1240px] mx-auto flex items-center gap-[6px] sm:gap-[12px] whitespace-nowrap">
+      <div className="max-w-[1240px] mx-auto flex items-center justify-start md:justify-center lg:justify-start gap-1 sm:gap-2 md:gap-3 lg:gap-[12px] whitespace-nowrap">
         {items.map((item) => {
           const isActive = active === item.id;
           return (
@@ -41,7 +41,7 @@ export default function AboutSubNav({ activeSection: initialActive }: SubNavProp
               key={item.id}
               type="button"
               onClick={() => scrollToSection(item.id)}
-              className={`font-display font-black text-[26px] sm:text-[34px] lg:text-[40px] leading-[0.88] pt-[14px] pb-[10px] px-[12px] transition-colors select-none tracking-wide ${
+              className={`font-display font-black text-[18px] sm:text-[22px] md:text-[26px] lg:text-[32px] xl:text-[40px] leading-[0.88] pt-[14px] pb-[10px] px-2 sm:px-2.5 md:px-3 lg:px-[12px] transition-colors select-none tracking-wide ${
                 isActive
                   ? "text-[#b51d42] border-[#b51d42] border-b-3 border-solid"
                   : "text-[#6c5a61] hover:text-[#b51d42]"

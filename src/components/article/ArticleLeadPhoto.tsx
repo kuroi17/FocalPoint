@@ -13,7 +13,7 @@ export default function ArticleLeadPhoto({
 }: ArticleLeadPhotoProps) {
   return (
     <div
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] lg:px-[180px] pb-[40px] flex flex-col gap-[8px] items-start"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[180px] pb-[40px] flex flex-col gap-[8px] items-start"
       data-node-id="6:570"
       data-name="lead photo"
     >

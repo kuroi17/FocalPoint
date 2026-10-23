@@ -10,12 +10,12 @@ export default function NotFound() {
     <div className="min-h-screen flex flex-col bg-white text-[#2b2226] font-sans selection:bg-[#ffe1e5] selection:text-[#b51d42]">
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[100px] pt-[40px] lg:pt-[72px] pb-[48px] lg:pb-[80px] flex items-center">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-[40px] lg:pt-[72px] pb-[48px] lg:pb-[80px] flex items-center">
         <div className="flex flex-col lg:flex-row gap-[32px] items-center justify-between w-full">
           {/* Left Column: 404, Heading, Description, Buttons */}
           <div className="flex-1 flex flex-col gap-[14px] items-start w-full min-w-0">
             {/* Giant 404 display text */}
-            <h1 className="font-display font-black text-[196px] lg:text-[336px] text-[#b51d42] leading-[0.88] select-none whitespace-nowrap">
+            <h1 className="font-display font-black text-[140px] sm:text-[196px] md:text-[240px] xl:text-[336px] text-[#b51d42] leading-[0.88] select-none whitespace-nowrap">
               404
             </h1>
 

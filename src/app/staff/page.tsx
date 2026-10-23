@@ -38,7 +38,7 @@ export default function StaffPage() {
     <div className="min-h-screen bg-white flex flex-col font-sans selection:bg-[#ffe1e5] selection:text-[#b51d42]">
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[100px] pt-[28px] lg:pt-[40px] pb-[40px] lg:pb-[64px] flex flex-col gap-[20px] items-start">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-[28px] lg:pt-[40px] pb-[40px] lg:pb-[64px] flex flex-col gap-[20px] items-start">
         {/* Title bar */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between w-full whitespace-nowrap gap-1">
           <h1 className="text-[62px] md:text-[78px] font-black text-[#b51d42] font-display leading-[0.88]">
@@ -97,8 +97,8 @@ export default function StaffPage() {
               )}
             </div>
 
-            {/* Two Column Workspace on desktop, stacked on mobile */}
-            <div className="flex flex-col lg:flex-row gap-[24px] items-start w-full">
+            {/* Two Column Workspace on desktop, stacked on mobile/tablet */}
+            <div className="flex flex-col xl:flex-row gap-[24px] items-start w-full">
               {/* Form */}
               <div className="flex-1 w-full flex flex-col gap-[12px] items-start min-w-0">
                 {/* Section dropdown */}

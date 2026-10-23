@@ -28,12 +28,12 @@ export default function CommunityLensAndListen() {
   ];
 
   return (
-    <section className="w-full max-w-[1440px] px-5 md:px-[100px] pb-[64px]">
-      <div className="flex flex-col lg:flex-row gap-[40px] items-start w-full">
-        {/* Community lens (720px) */}
-        <div className="w-full lg:w-[720px] shrink-0 flex flex-col gap-[16px]">
+    <section className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pb-[64px]">
+      <div className="flex flex-col xl:flex-row gap-8 lg:gap-[40px] items-start w-full">
+        {/* Community lens */}
+        <div className="w-full xl:w-[720px] flex-1 min-w-0 flex flex-col gap-[16px]">
           <div className="flex items-center justify-between text-[#b51d42] w-full">
-            <h3 className="text-[44px] md:text-[56px] font-black font-display leading-[0.88]">
+            <h3 className="text-[36px] sm:text-[44px] md:text-[56px] font-black font-display leading-[0.88]">
               COMMUNITY LENS
             </h3>
             <Link
@@ -67,7 +67,7 @@ export default function CommunityLensAndListen() {
         {/* Listen / Podcasts (480px) */}
         <div className="flex-1 flex flex-col gap-[4px] w-full min-w-0">
           <div className="flex items-center justify-between text-[#b51d42] w-full mb-1">
-            <h3 className="text-[44px] md:text-[56px] font-black font-display leading-[0.88]">
+            <h3 className="text-[36px] sm:text-[44px] md:text-[56px] font-black font-display leading-[0.88]">
               LISTEN
             </h3>
             <Link

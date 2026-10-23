@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SectionHeroBanner from "./section/SectionHeroBanner";
@@ -104,6 +106,26 @@ export default function SectionTemplate({
       ? "mely campus issues, reported with accuracy, speed and purpose."
       : "");
 
+  const searchParams = useSearchParams();
+  const searchQ = searchParams ? searchParams.get("q") : null;
+
+  // Filter stories if search query or active filter is set
+  const allStories = stories ?? defaultStories;
+  const filteredStories = allStories.filter((item) => {
+    if (searchQ && searchQ.trim()) {
+      const q = searchQ.toLowerCase().trim();
+      return (
+        item.title.toLowerCase().includes(q) ||
+        item.tag.toLowerCase().includes(q) ||
+        item.author.toLowerCase().includes(q)
+      );
+    }
+    if (activeFilter && activeFilter !== "All") {
+      return item.tag.toLowerCase().includes(activeFilter.toLowerCase());
+    }
+    return true;
+  });
+
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#2b2226]">
       <Header />
@@ -125,10 +147,25 @@ export default function SectionTemplate({
             2. BODY CONTENT: FILTERS, FEATURED & STORIES (Figma 6:369)
         ========================================================== */}
         <div
-          className="w-full px-5 sm:px-8 md:px-[100px] py-[40px] flex flex-col gap-[32px]"
+          className="w-full max-w-[1440px] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] py-8 md:py-[40px] flex flex-col gap-6 md:gap-[32px]"
           data-node-id="6:369"
           data-name="stories"
         >
+          {/* Active Search Notification Banner */}
+          {searchQ && (
+            <div className="flex items-center justify-between bg-[#fff4f5] border border-[#f1c9d0] px-4 py-3 rounded-[6px]">
+              <span className="text-[14px] text-[#2b2226]">
+                Showing search results for: <strong className="text-[#b51d42]">"{searchQ}"</strong> ({filteredStories.length} found)
+              </span>
+              <Link
+                href={`/${categorySlug}`}
+                className="text-[13px] font-bold text-[#b51d42] hover:underline"
+              >
+                Clear filter ✕
+              </Link>
+            </div>
+          )}
+
           {/* Category Filter Chips (Figma 6:370) */}
           <SectionFilterChips
             filters={filters}
@@ -137,24 +174,26 @@ export default function SectionTemplate({
           />
 
           {/* Lead Featured Section (Figma 6:379) */}
-          <SectionFeaturedCard
-            photoLabel={featuredPhotoLabel}
-            cardTitle="FEATURED"
-            headlinePrefix={featuredHeadlinePrefix}
-            headlineHighlight={featuredHeadlineHighlight}
-            byline={featuredByline}
-            buttonText="Read the story  →"
-            href="/article/the-long-way-to-class"
-          />
+          {!searchQ && (
+            <SectionFeaturedCard
+              photoLabel={featuredPhotoLabel}
+              cardTitle="FEATURED"
+              headlinePrefix={featuredHeadlinePrefix}
+              headlineHighlight={featuredHeadlineHighlight}
+              byline={featuredByline}
+              buttonText="Read the story  →"
+              href="/article/the-long-way-to-class"
+            />
+          )}
 
           {/* Story Grid & Important Sidebar (Figma 6:409) */}
           <div
-            className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row gap-[40px] items-start pt-[10px]"
+            className="w-full max-w-[1240px] mx-auto flex flex-col lg:flex-row gap-8 lg:gap-[40px] items-start pt-[10px]"
             data-node-id="6:409"
           >
             {/* Left 2x2 Story Cards + Pager */}
             <SectionStoriesGrid
-              stories={stories ?? defaultStories}
+              stories={filteredStories}
               currentPage={currentPage}
               totalPages={3}
               onPageChange={setCurrentPage}

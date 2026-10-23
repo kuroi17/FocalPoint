@@ -93,7 +93,7 @@ export default function AboutHeroBanner() {
 
       {/* Decorative Banner Rule (Rotated 0.6deg) */}
       <div
-        className="hidden md:block absolute left-1/2 top-[462px] -translate-x-1/2 w-[1100px] z-10 pointer-events-none"
+        className="hidden md:block absolute left-1/2 top-[462px] -translate-x-1/2 w-full max-w-[1100px] px-4 z-10 pointer-events-none"
         data-node-id="2008:1713"
       >
         <div className="rotate-[0.6deg] bg-[#bdb5b8] h-[2px] w-full" />

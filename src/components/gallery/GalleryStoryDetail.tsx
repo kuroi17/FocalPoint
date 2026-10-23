@@ -21,7 +21,7 @@ export default function GalleryStoryDetail({
       data-node-id="10:1021"
       data-name="photo story (tapped state)"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] flex flex-col gap-[16px]">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] flex flex-col gap-[16px]">
         {/* Section Label */}
         <p
           className="font-sans font-bold text-[12px] text-[#6c5a61] tracking-[0.96px] uppercase"
@@ -32,12 +32,12 @@ export default function GalleryStoryDetail({
 
         {/* Story Card Container */}
         <div
-          className="bg-white border-[1.5px] border-[#e0506a] border-solid rounded-[4px] p-5 sm:p-[24px] flex flex-col lg:flex-row gap-[24px] items-start w-full shadow-sm"
+          className="bg-white border-[1.5px] border-[#e0506a] border-solid rounded-[4px] p-5 sm:p-[24px] flex flex-col xl:flex-row gap-[24px] items-start w-full shadow-sm"
           data-node-id="10:1023"
         >
           {/* Photo Large Preview */}
           <div
-            className="w-full lg:w-[640px] h-[260px] sm:h-[340px] lg:h-[400px] rounded-[4px] relative overflow-hidden shrink-0 flex items-end p-3 select-none"
+            className="w-full xl:w-[640px] h-[260px] sm:h-[340px] lg:h-[400px] rounded-[4px] relative overflow-hidden shrink-0 flex items-end p-3 select-none"
             style={{ backgroundImage: photo.gradient }}
             data-node-id="10:1024"
             data-name="photo"

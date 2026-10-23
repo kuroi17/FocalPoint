@@ -47,7 +47,7 @@ export default function ArticleKeepReading({
 }: ArticleKeepReadingProps) {
   return (
     <section
-      className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] pt-[56px] pb-[64px] flex flex-col gap-[24px] items-start"
+      className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] pt-10 md:pt-[56px] pb-[64px] flex flex-col gap-[24px] items-start"
       data-node-id="6:669"
       data-name="keep reading"
     >

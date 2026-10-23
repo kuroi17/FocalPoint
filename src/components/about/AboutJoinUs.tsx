@@ -38,10 +38,10 @@ export default function AboutJoinUs() {
       data-node-id="8:1061"
       data-name="join the focalcrews"
     >
-      <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] flex flex-col gap-[24px]">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[100px] flex flex-col gap-[24px]">
         {/* Section Head */}
         <div className="flex flex-col gap-2">
-          <h2 className="font-display font-black text-[52px] sm:text-[68px] lg:text-[78px] text-[#b51d42] leading-[0.88] tracking-wide whitespace-nowrap">
+          <h2 className="font-display font-black text-[40px] sm:text-[56px] md:text-[68px] lg:text-[78px] text-[#b51d42] leading-[0.88] tracking-wide">
             JOIN THE FOCALCREWS
           </h2>
           <p className="font-sans font-normal text-[16px] sm:text-[17px] text-[#6c5a61] tracking-[-0.17px]">

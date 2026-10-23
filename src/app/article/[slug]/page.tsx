@@ -69,17 +69,17 @@ export default function ArticlePage() {
             3. STORY BODY & IMPORTANT SIDEBAR (Figma 6:575)
         ========================================================== */}
         <section
-          className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[60px] lg:px-[202px] pb-[64px]"
+          className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[202px] pb-[64px]"
           data-node-id="6:575"
           data-name="story body"
         >
           <div
-            className="flex flex-col lg:flex-row gap-[48px] lg:gap-[56px] items-start w-full justify-between"
+            className="flex flex-col xl:flex-row gap-[48px] lg:gap-[56px] items-start w-full justify-between"
             data-node-id="6:576"
           >
             {/* Left Reading Column (680px) */}
             <div
-              className="flex-1 w-full max-w-full lg:max-w-[680px] flex flex-col gap-[20px] items-start text-[#2b2226]"
+              className="flex-1 w-full max-w-full xl:max-w-[680px] flex flex-col gap-[20px] items-start text-[#2b2226]"
               data-node-id="6:577"
               data-name="text column"
             >

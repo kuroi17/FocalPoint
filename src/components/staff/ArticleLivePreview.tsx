@@ -14,7 +14,7 @@ export default function ArticleLivePreview({
   byline,
 }: ArticleLivePreviewProps) {
   return (
-    <div className="w-full lg:w-[300px] shrink-0 flex flex-col gap-[8px]">
+    <div className="w-full xl:w-[300px] shrink-0 flex flex-col gap-[8px]">
       {/* Label */}
       <span className="font-bold text-[11px] text-[#6c5a61] tracking-[0.66px] uppercase">
         LIVE PREVIEW
