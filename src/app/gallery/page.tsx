@@ -1,93 +1,184 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import GalleryHeader from "@/components/gallery/GalleryHeader";
+import GalleryControls from "@/components/gallery/GalleryControls";
+import GalleryMasonry, {
+  PhotoItem,
+} from "@/components/gallery/GalleryMasonry";
+import GalleryStoryDetail from "@/components/gallery/GalleryStoryDetail";
+import GallerySubmitModal from "@/components/gallery/GallerySubmitModal";
+
+const ALL_PHOTOS: PhotoItem[] = [
+  {
+    id: "rain-on-the-walk-home",
+    title: "Rain on the walk home",
+    category: "COMMUNITY",
+    height: 420,
+    gradient:
+      "linear-gradient(125.63deg, rgb(255, 225, 229) 0%, rgb(224, 80, 106) 71.43%)",
+    author: "Shared by a Grade 9 reader",
+    story:
+      "I waited out the rain under the waiting shed and noticed how everyone shared one umbrella.",
+    type: "community",
+  },
+  {
+    id: "court-lights",
+    title: "Court lights before the game",
+    category: "PHOTO DESK",
+    height: 260,
+    gradient:
+      "linear-gradient(139.18deg, rgb(255, 225, 229) 0%, rgb(47, 143, 131) 71.43%)",
+    author: "Shot by Photo Desk",
+    story:
+      "Warmup lights hitting the court an hour before tip-off, when the gym is still dead silent.",
+    type: "photojourn",
+  },
+  {
+    id: "morning-assembly",
+    title: "Morning assembly, seen from the stairs",
+    category: "PHOTO DESK",
+    height: 260,
+    gradient:
+      "linear-gradient(139.18deg, rgb(255, 225, 229) 0%, rgb(217, 164, 65) 71.43%)",
+    author: "Shot by Photo Desk",
+    story:
+      "The entire student body filling the quadrangle in lines that only look straight from the top floor.",
+    type: "photojourn",
+  },
+  {
+    id: "canteen-at-1205",
+    title: "The canteen at 12:05",
+    category: "PHOTO DESK",
+    height: 420,
+    gradient:
+      "linear-gradient(125.63deg, rgb(255, 225, 229) 0%, rgb(192, 48, 79) 71.43%)",
+    author: "Shot by Photo Desk",
+    story:
+      "Five minutes after the bell rings, lunch trays turn into a high-speed negotiation.",
+    type: "photojourn",
+  },
+  {
+    id: "zine-table",
+    title: "Zine table at the fair",
+    category: "COMMUNITY",
+    height: 340,
+    gradient:
+      "linear-gradient(131.52deg, rgb(255, 225, 229) 0%, rgb(125, 91, 166) 71.43%)",
+    author: "Shared by a Literary staffer",
+    story:
+      "Handmade zines, stapled photocopies, and student art traded across desks at the club fair.",
+    type: "community",
+  },
+  {
+    id: "fokie-sticker",
+    title: "Fokie sticker spotted",
+    category: "COMMUNITY",
+    height: 340,
+    gradient:
+      "linear-gradient(131.52deg, rgb(255, 225, 229) 0%, rgb(240, 138, 155) 71.43%)",
+    author: "Shared by a Grade 11 reader",
+    story:
+      "A holographic Fokie sticker spotted on an engineering student's laptop in the canteen.",
+    type: "community",
+  },
+  {
+    id: "practice-after-bell",
+    title: "Practice after the last bell",
+    category: "PHOTO DESK",
+    height: 300,
+    gradient:
+      "linear-gradient(135.1deg, rgb(255, 225, 229) 0%, rgb(44, 109, 181) 71.43%)",
+    author: "Shot by Sports Desk",
+    story:
+      "Track and field athletes running intervals as the campus gates begin to close for the day.",
+    type: "photojourn",
+  },
+  {
+    id: "sunrise-run",
+    title: "Sunrise run",
+    category: "COMMUNITY",
+    height: 380,
+    gradient:
+      "linear-gradient(128.38deg, rgb(255, 225, 229) 0%, rgb(163, 90, 42) 71.43%)",
+    author: "Shared by a campus runner",
+    story:
+      "Early morning joggers catching the first orange sunlight over the oval track.",
+    type: "community",
+  },
+];
 
 export default function GalleryPage() {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+  const [selectedPhoto, setSelectedPhoto] = useState<PhotoItem | null>(
+    ALL_PHOTOS[0]
+  );
+  const [isSubmitModalOpen, setIsSubmitModalOpen] = useState<boolean>(false);
 
-  const photos = [
-    { title: "Morning Commute Lines", by: "Photo Desk", tag: "Campus Life", grad: "linear-gradient(135deg, #fcebe8 0%, #e0506a 80%)" },
-    { title: "Rally at the Freedom Wall", by: "Photo Desk", tag: "Events", grad: "linear-gradient(135deg, #fef4dc 0%, #d89f28 80%)" },
-    { title: "Quiet Hours at Central Library", by: "Bea Reyes", tag: "Study Spaces", grad: "linear-gradient(135deg, #e3f5f2 0%, #2e8b83 80%)" },
-    { title: "Volleyball Championship Finals", by: "Sports Desk", tag: "Sports", grad: "linear-gradient(135deg, #f2edf8 0%, #7d5ba6 80%)" },
-    { title: "Late Night Laboratory", by: "Sci-Tech Desk", tag: "Campus Life", grad: "linear-gradient(135deg, #e0f2fe 0%, #0369a1 80%)" },
-    { title: "Campus Canteen Rush", by: "Photo Desk", tag: "Campus Life", grad: "linear-gradient(135deg, #fcebe8 0%, #b51d42 80%)" },
-  ];
+  // Filter logic
+  const filteredPhotos = ALL_PHOTOS.filter((photo) => {
+    if (activeFilter === "All") return true;
+    if (activeFilter === "Photojourn board")
+      return photo.category === "PHOTO DESK";
+    if (activeFilter === "Community")
+      return photo.category === "COMMUNITY";
+    return true;
+  });
+
+  const handlePhotoClick = (photo: PhotoItem) => {
+    setSelectedPhoto(photo);
+    const detailEl = document.getElementById("photo-detail");
+    if (detailEl) {
+      detailEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#2b2226]">
+    <div className="min-h-screen flex flex-col bg-white text-[#2b2226] selection:bg-[#ffe1e5] selection:text-[#b51d42]">
+      {/* 1. Global Navigation Header */}
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] px-5 md:px-[100px] py-10 flex flex-col gap-8">
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 border-b border-[#f1c9d0] pb-6">
-          <div className="flex flex-col gap-2">
-            <span className="text-[12px] font-bold text-[#b51d42] uppercase tracking-wider">
-              COMMUNITY LENS
-            </span>
-            <h1 className="text-[44px] md:text-[68px] font-black leading-none font-display text-[#b51d42]">
-              PHOTO GALLERY
-            </h1>
-            <p className="text-[16px] text-[#5f5a5c]">
-              Visual stories and photojournalism documenting our university and communities.
-            </p>
-          </div>
+      <main className="flex-1 w-full flex flex-col items-center">
+        {/* 2. Gallery Page Head: Breadcrumb, 210px IMAGE BOARD, Lead Text, Fokie Mascot */}
+        <GalleryHeader />
 
-          <button
-            onClick={() => alert("Photo submission portal: Submit high-res photos with complete caption & context.")}
-            className="px-5 py-2.5 bg-[#b51d42] text-white font-bold text-[14px] rounded-[4px] hover:bg-[#a8283f] transition-colors"
-          >
-            Submit a Photo →
-          </button>
-        </div>
+        {/* 3. Board Section: Filter Chips, Submit Button, Subtext, Masonry Grid */}
+        <section
+          className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 md:px-[100px] pb-[64px] flex flex-col gap-[16px]"
+          data-node-id="10:964"
+          data-name="board"
+        >
+          {/* Controls: Chips, Button, Description */}
+          <GalleryControls
+            activeFilter={activeFilter}
+            onFilterChange={setActiveFilter}
+            onSubmitClick={() => setIsSubmitModalOpen(true)}
+          />
 
-        {/* Filter Chips */}
-        <div className="flex items-center gap-2 overflow-x-auto scrollbar-none">
-          {["All", "Campus Life", "Events", "Sports", "Study Spaces"].map((f) => (
-            <button
-              key={f}
-              onClick={() => setActiveFilter(f)}
-              className={`px-4 py-2 rounded-full text-[13.5px] font-bold transition-colors whitespace-nowrap ${
-                activeFilter === f
-                  ? "bg-[#b51d42] text-white"
-                  : "bg-[#fff4f5] text-[#2b2226] border border-[#f1c9d0]"
-              }`}
-            >
-              {f}
-            </button>
-          ))}
-        </div>
+          {/* Masonry 4-Column Grid */}
+          <GalleryMasonry
+            photos={filteredPhotos}
+            selectedPhotoId={selectedPhoto?.id}
+            onPhotoClick={handlePhotoClick}
+          />
+        </section>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {photos
-            .filter((p) => activeFilter === "All" || p.tag === activeFilter)
-            .map((p, i) => (
-              <div key={i} className="flex flex-col gap-2 group cursor-pointer">
-                <div
-                  className="w-full aspect-[4/3] rounded-[4px] overflow-hidden relative group-hover:scale-[1.01] transition-transform"
-                  style={{ backgroundImage: p.grad }}
-                >
-                  <span className="absolute bottom-3 left-3 text-[11px] font-bold text-white tracking-widest">
-                    {p.tag}
-                  </span>
-                  <img
-                    src="/assets/5aa9ab8a17a2061cb6b688106cf1fde9c726de26.png"
-                    alt="Badge"
-                    className="absolute bottom-3 right-3 w-5 h-5 opacity-80 object-contain"
-                  />
-                </div>
-                <h3 className="text-[17px] font-bold text-[#2b2226] group-hover:text-[#b51d42] leading-snug">
-                  {p.title}
-                </h3>
-                <span className="text-[12.5px] text-[#7a7275]">{p.by}</span>
-              </div>
-            ))}
-        </div>
+        {/* 4. Photo Story (Tapped State) / WHEN YOU TAP A PHOTO */}
+        <GalleryStoryDetail
+          photo={selectedPhoto}
+          onClose={() => setSelectedPhoto(null)}
+        />
       </main>
 
+      {/* 5. Submit Photo Modal */}
+      <GallerySubmitModal
+        isOpen={isSubmitModalOpen}
+        onClose={() => setIsSubmitModalOpen(false)}
+      />
+
+      {/* 6. Global Footer */}
       <Footer />
     </div>
   );
