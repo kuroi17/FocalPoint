@@ -6,8 +6,10 @@ export default function NewsPage() {
     <SectionTemplate
       categorySlug="news"
       categoryName="News"
-      description="For those who want to be where the story begins. Timely campus issues, reported with accuracy, speed and purpose."
-      accentColor="#b51d42"
+      descriptionPrefix="For those who want to be "
+      descriptionHighlight="where the story begins. Ti"
+      descriptionSuffix="mely campus issues, reported with accuracy, speed and purpose."
+      accentColor="#c0304f"
     />
   );
 }
