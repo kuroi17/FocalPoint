@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PageLoader from "@/components/PageLoader";
 
 export const metadata: Metadata = {
   title: "Focalpoint — Philippine Student Journalism",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-white text-[#2b2226] antialiased">
+        <PageLoader />
         {children}
       </body>
     </html>

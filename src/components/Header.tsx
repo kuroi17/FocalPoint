@@ -1,17 +1,108 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const pathname = usePathname();
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setIsMoreOpen(false);
+  }, [pathname]);
+
+  const [greetingInfo, setGreetingInfo] = useState({
+    greeting: "Good evening, readers!",
+    fullDate: "Friday, October 23, 2026",
+    shortDate: "Fri, Oct 23",
+  });
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting = "Good morning, readers!";
+      if (hour >= 12 && hour < 18) {
+        greeting = "Good afternoon, readers!";
+      } else if (hour >= 18 || hour < 5) {
+        greeting = "Good evening, readers!";
+      }
+
+      const fullDate = now.toLocaleDateString("en-US", {
+        weekday: "long",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      });
+
+      const shortDate = now.toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+      });
+
+      setGreetingInfo({ greeting, fullDate, shortDate });
+    };
+
+    updateTime();
+  }, []);
+
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "News", href: "/news" },
+    { label: "Editorial & Column", href: "/editorial" },
+    { label: "Feature", href: "/features" },
+    { label: "Sci-Tech", href: "/sci-tech" },
+    { label: "Sports", href: "/sports" },
+    { label: "Literary", href: "/literary" },
+  ];
+
+  const moreLinks = [
+    { label: "Podcasts", href: "/podcasts" },
+    { label: "Community", href: "/community" },
+    { label: "Staff Desk", href: "/staff" },
+    { label: "My Profile", href: "/profile" },
+  ];
+
+  const isMoreActive = moreLinks.some(
+    (link) => pathname === link.href || pathname.startsWith(`${link.href}/`),
+  );
+
+  const isLinkActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
-    <header className="w-full bg-white select-none">
+    <header className="w-full bg-white select-none relative z-40">
       {/* 1. Greeting strip */}
       <div className="w-full bg-[#b51d42] text-white flex items-center justify-between px-5 md:px-[100px] py-[7px]">
         <p className="text-[13px] font-normal tracking-tight">
-          <span className="font-bold">Good evening, readers!</span>
-          <span className="hidden md:inline font-normal"> Monday, October 19, 2026</span>
-          <span className="inline md:hidden font-normal"> Mon, Oct 19</span>
+          <span className="font-bold">{greetingInfo.greeting}</span>
+          <span className="hidden md:inline font-normal">
+            {" "}
+            {greetingInfo.fullDate}
+          </span>
+          <span className="inline md:hidden font-normal"> {greetingInfo.shortDate}</span>
         </p>
         <div className="bg-white/16 flex items-center px-[10px] py-[3px] rounded-full">
           <span className="text-[12.5px] font-semibold text-white">🔥 1 day</span>
@@ -104,83 +195,100 @@ export default function Header() {
       </div>
 
       {/* 3. Navigation bar */}
-      <nav className="w-full border-t border-b border-[#f1c9d0] px-3 md:px-[92px] py-[6px] flex items-center gap-[2px] overflow-x-auto scrollbar-none">
-        <Link
-          href="/"
-          className="relative px-[9px] py-[7px] text-[14px] font-semibold text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Home
-          <span className="absolute bottom-0 left-[9px] w-[32px] h-[2px] bg-[#b51d42]" />
-        </Link>
-        <Link
-          href="/news"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          News
-        </Link>
-        <Link
-          href="/editorial"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Editorial & Column
-        </Link>
-        <Link
-          href="/features"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Feature
-        </Link>
-        <Link
-          href="/sci-tech"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Sci-Tech
-        </Link>
-        <Link
-          href="/sports"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Sports
-        </Link>
-        <Link
-          href="/literary"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
-        >
-          Literary
-        </Link>
+      <nav className="w-full border-t border-b border-[#f1c9d0] px-3 md:px-[92px] py-[6px] flex items-center gap-[2px] overflow-x-auto md:overflow-visible scrollbar-none relative">
+        {navLinks.map((item) => {
+          const active = isLinkActive(item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`relative px-[9px] py-[7px] text-[14px] font-semibold tracking-[-0.14px] whitespace-nowrap shrink-0 transition-colors ${
+                active ? "text-[#b51d42]" : "text-[#2b2226] hover:text-[#b51d42]"
+              }`}
+            >
+              {item.label}
+              {active && (
+                <span className="absolute bottom-0 left-[9px] right-[9px] h-[2px] bg-[#b51d42]" />
+              )}
+            </Link>
+          );
+        })}
+
         <div className="w-px h-[20px] bg-[#f1c9d0] mx-1 shrink-0" />
+
+        {/* Gallery */}
         <Link
           href="/gallery"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
+          className={`relative px-[9px] py-[7px] text-[14px] font-semibold tracking-[-0.14px] whitespace-nowrap shrink-0 transition-colors ${
+            isLinkActive("/gallery")
+              ? "text-[#b51d42]"
+              : "text-[#2b2226] hover:text-[#b51d42]"
+          }`}
         >
           Gallery
+          {isLinkActive("/gallery") && (
+            <span className="absolute bottom-0 left-[9px] right-[9px] h-[2px] bg-[#b51d42]" />
+          )}
         </Link>
+
+        {/* About */}
         <Link
           href="/about"
-          className="px-[9px] py-[7px] text-[14px] font-semibold text-[#2b2226] hover:text-[#b51d42] tracking-[-0.14px] whitespace-nowrap shrink-0"
+          className={`relative px-[9px] py-[7px] text-[14px] font-semibold tracking-[-0.14px] whitespace-nowrap shrink-0 transition-colors ${
+            isLinkActive("/about")
+              ? "text-[#b51d42]"
+              : "text-[#2b2226] hover:text-[#b51d42]"
+          }`}
         >
           About
+          {isLinkActive("/about") && (
+            <span className="absolute bottom-0 left-[9px] right-[9px] h-[2px] bg-[#b51d42]" />
+          )}
         </Link>
-        
+
         {/* More dropdown */}
-        <div className="relative group shrink-0">
-          <button className="px-[9px] py-[7px] text-[14px] font-semibold text-[#b51d42] underline hover:text-[#961735] tracking-[-0.14px] whitespace-nowrap cursor-pointer flex items-center gap-1">
-            More ▾
+        <div ref={dropdownRef} className="relative shrink-0">
+          <button
+            type="button"
+            onClick={() => setIsMoreOpen((prev) => !prev)}
+            onMouseEnter={() => setIsMoreOpen(true)}
+            className={`relative px-[9px] py-[7px] text-[14px] font-semibold tracking-[-0.14px] whitespace-nowrap cursor-pointer flex items-center gap-1 transition-colors ${
+              isMoreActive || isMoreOpen
+                ? "text-[#b51d42]"
+                : "text-[#2b2226] hover:text-[#b51d42]"
+            }`}
+          >
+            <span>More ▾</span>
+            {isMoreActive && (
+              <span className="absolute bottom-0 left-[9px] right-[9px] h-[2px] bg-[#b51d42]" />
+            )}
           </button>
-          <div className="absolute right-0 top-full mt-1 hidden group-hover:flex flex-col bg-white border border-[#f1c9d0] rounded shadow-lg z-50 min-w-[140px] py-1">
-            <Link href="/podcasts" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
-              Podcasts
-            </Link>
-            <Link href="/community" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
-              Community
-            </Link>
-            <Link href="/staff" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
-              Staff Desk
-            </Link>
-            <Link href="/profile" className="px-4 py-2 text-[13px] font-medium text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]">
-              My Profile
-            </Link>
-          </div>
+
+          {/* Dropdown dialog menu */}
+          {isMoreOpen && (
+            <div
+              onMouseLeave={() => setIsMoreOpen(false)}
+              className="absolute right-0 top-full mt-1.5 flex flex-col bg-white border border-[#f1c9d0] rounded-[6px] shadow-2xl z-[100] min-w-[170px] py-1.5"
+            >
+              {moreLinks.map((link) => {
+                const active = isLinkActive(link.href);
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsMoreOpen(false)}
+                    className={`px-4 py-2 text-[13px] font-semibold transition ${
+                      active
+                        ? "bg-[#fff4f5] text-[#b51d42]"
+                        : "text-[#2b2226] hover:bg-[#fff4f5] hover:text-[#b51d42]"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
+          )}
         </div>
       </nav>
     </header>

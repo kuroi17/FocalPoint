@@ -58,3 +58,41 @@ p.font-display {
 .font-body {
   font-family: 'SF Pro', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
 }
+
+@keyframes featherFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+@keyframes featherSweepAcross {
+  0% {
+    transform: translate3d(-100vw, 0, 0) rotate(14deg);
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(140vw, 0, 0) rotate(14deg);
+    opacity: 0.8;
+  }
+}
+
+.animate-feather-float-slow {
+  animation: featherFloat 4s ease-in-out infinite;
+}
+
+.animate-feather-float-fast {
+  animation: featherFloat 2.8s ease-in-out infinite;
+}
+
+.animate-feather-sweep {
+  animation: featherSweepAcross 0.85s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
