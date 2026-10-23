@@ -1,0 +1,67 @@
+import React from "react";
+import Link from "next/link";
+
+export default function PodcastHeader() {
+  return (
+    <div
+      className="w-full bg-gradient-to-r from-[#ffe1e5] to-[#fff4f5] px-5 sm:px-8 md:px-[100px] py-[40px]"
+      data-node-id="10:1112"
+      data-name="page head"
+    >
+      <div className="w-full max-w-[1440px] mx-auto flex flex-col lg:flex-row gap-[24px] items-start lg:items-end justify-between">
+        {/* Left Column: Breadcrumb, Title, Lead */}
+        <div
+          className="flex-1 flex flex-col gap-[14px] items-start min-w-0"
+          data-node-id="10:1114"
+        >
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="font-sans font-normal text-[13px] tracking-[-0.13px]"
+            data-node-id="10:1115"
+          >
+            <Link
+              href="/"
+              className="text-[#b51d42] hover:underline transition-colors"
+            >
+              Home
+            </Link>
+            <span className="text-[#6c5a61]"> / Podcasts & multimedia</span>
+          </nav>
+
+          {/* Title: FOCAL TALK */}
+          <h1
+            className="font-display font-black leading-[0.88] text-[68px] sm:text-[110px] md:text-[150px] lg:text-[210px] text-[#b51d42] tracking-tight select-none"
+            data-node-id="10:1116"
+          >
+            FOCAL TALK
+          </h1>
+
+          {/* Lead Copy */}
+          <p
+            className="font-sans font-normal text-[17px] sm:text-[19px] lg:text-[20px] text-[#2b2226] leading-[1.45] tracking-[-0.2px] max-w-[760px]"
+            data-node-id="10:1117"
+          >
+            Podcasts, video explainers and multimedia work from the desks.{" "}
+            <strong className="font-bold text-[#b51d42]">
+              Press play on any episode.
+            </strong>
+          </p>
+        </div>
+
+        {/* Right Mascot: Fokie Illustration */}
+        <div
+          className="w-[180px] sm:w-[220px] h-[220px] sm:h-[271px] relative shrink-0 self-center lg:self-end"
+          data-node-id="10:1118"
+          data-name="fokie"
+        >
+          <img
+            src="/assets/130e9e03a66ae4fc0b1463c9486da5a07856222c.png"
+            alt="Fokie mascot with newspaper"
+            className="w-full h-full object-contain pointer-events-none drop-shadow-sm select-none"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
