@@ -7,65 +7,100 @@ import Footer from "@/components/Footer";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#2b2226]">
+    <div className="min-h-screen flex flex-col bg-white text-[#2b2226] font-sans selection:bg-[#ffe1e5] selection:text-[#b51d42]">
       <Header />
 
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 md:px-[100px] py-[60px] md:py-[80px] flex items-center justify-center">
-        <div className="w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          
-          {/* Left Column: 404 text & actions */}
-          <div className="md:col-span-7 flex flex-col items-start gap-4">
-            <h1 className="text-[120px] md:text-[220px] lg:text-[280px] font-black leading-[0.88] text-[#b51d42] font-display select-none">
+      <main className="flex-1 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-[100px] pt-[40px] lg:pt-[72px] pb-[48px] lg:pb-[80px] flex items-center">
+        <div className="flex flex-col lg:flex-row gap-[32px] items-center justify-between w-full">
+          {/* Left Column: 404, Heading, Description, Buttons */}
+          <div className="flex-1 flex flex-col gap-[14px] items-start w-full min-w-0">
+            {/* Giant 404 display text */}
+            <h1 className="font-display font-black text-[196px] lg:text-[336px] text-[#b51d42] leading-[0.88] select-none whitespace-nowrap">
               404
             </h1>
-            <h2 className="text-[26px] md:text-[34px] font-semibold leading-[1.08] text-[#2b2226] tracking-[-1.02px]">
+
+            {/* Heading */}
+            <h2 className="font-semibold text-[26px] lg:text-[34px] text-[#2b2226] leading-[1.04] tracking-[-0.78px] lg:tracking-[-1.02px]">
               Fokie looked everywhere, but this page went off the beat.
             </h2>
-            <p className="text-[15px] md:text-[17px] text-[#6c5a61] tracking-[-0.17px]">
+
+            {/* Description */}
+            <p className="font-normal text-[17px] text-[#6c5a61] tracking-[-0.17px] leading-normal">
               The link may be old, or the story moved to another section.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-3">
+            {/* Action buttons */}
+            <div className="flex gap-[10px] items-start pt-2">
               <Link
                 href="/"
-                className="px-[18px] py-[12px] bg-[#b51d42] hover:bg-[#a8283f] text-white text-[14px] font-bold rounded-[4px] tracking-[-0.14px] transition-colors"
+                className="bg-[#b51d42] hover:bg-[#a8283f] text-white px-[18px] py-[12px] rounded-[4px] font-bold text-[14px] tracking-[-0.14px] transition whitespace-nowrap inline-block"
               >
                 Back to the homepage
               </Link>
               <Link
                 href="/news"
-                className="px-[18px] py-[12px] border-[1.5px] border-[#b51d42] text-[#b51d42] hover:bg-[#fff4f5] text-[14px] font-bold rounded-[4px] tracking-[-0.14px] transition-colors"
+                className="border-[1.5px] border-[#b51d42] text-[#b51d42] hover:bg-[#fff4f5] px-[18px] py-[12px] rounded-[4px] font-bold text-[14px] tracking-[-0.14px] transition whitespace-nowrap inline-block"
               >
                 Search instead
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Confused tilted Fokie with question marks */}
-          <div className="md:col-span-5 flex justify-center items-center relative">
-            <div className="relative w-[280px] md:w-[340px] aspect-[4/5]">
-              {/* Question marks */}
-              <span className="absolute -top-4 right-6 text-[70px] md:text-[90px] font-black text-[#e0506a] font-display select-none">
-                ?
-              </span>
-              <span className="absolute top-16 -left-6 text-[50px] md:text-[62px] font-black text-[#e0506a] font-display select-none">
-                ?
-              </span>
-              <span className="absolute -top-2 left-16 text-[40px] md:text-[50px] font-black text-[#e0506a] font-display select-none">
-                ?
-              </span>
-
-              {/* Tilted Fokie */}
-              <div className="-rotate-6 w-full h-full">
-                <img
-                  src="/assets/130e9e03a66ae4fc0b1463c9486da5a07856222c.png"
-                  alt="Confused Fokie"
-                  className="w-full h-full object-contain pointer-events-none drop-shadow-md"
-                />
+          {/* Right Column: Confused Fokie with question marks */}
+          {/* Desktop Version */}
+          <div className="hidden lg:block w-[340px] h-[420px] relative shrink-0">
+            {/* Tilted Fokie */}
+            <div className="absolute flex h-[432.35px] items-center justify-center left-[-48px] top-[23px] w-[379.84px]">
+              <div className="-rotate-6 flex-none">
+                <div className="h-[399px] w-[340px] relative">
+                  <img
+                    src="/assets/130e9e03a66ae4fc0b1463c9486da5a07856222c.png"
+                    alt="Confused Fokie"
+                    className="absolute inset-0 size-full object-contain pointer-events-none"
+                  />
+                </div>
               </div>
             </div>
+
+            {/* Question Marks in Desktop positions */}
+            <span className="absolute font-display font-black text-[90px] text-[#e0506a] leading-[0.88] left-[261px] top-[32px] select-none">
+              ?
+            </span>
+            <span className="absolute font-display font-black text-[62px] text-[#e0506a] leading-[0.88] left-[-11px] top-[88px] select-none">
+              ?
+            </span>
+            <span className="absolute font-display font-black text-[50px] text-[#e0506a] leading-[0.88] left-[133px] top-[18px] select-none">
+              ?
+            </span>
           </div>
 
+          {/* Mobile Version */}
+          <div className="lg:hidden flex flex-col items-center pt-4">
+            <span className="font-display font-black text-[50px] text-[#e0506a] leading-[0.88] select-none mb-1">
+              ?
+            </span>
+            <div className="h-[300px] w-[240px] relative shrink-0">
+              <div className="absolute flex h-[308.53px] items-center justify-center left-[-17px] top-0 w-[268.48px]">
+                <div className="-rotate-6 flex-none">
+                  <div className="h-[285px] w-[240px] relative">
+                    <img
+                      src="/assets/130e9e03a66ae4fc0b1463c9486da5a07856222c.png"
+                      alt="Confused Fokie"
+                      className="absolute inset-0 size-full object-contain pointer-events-none"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Question Marks */}
+              <span className="absolute font-display font-black text-[90px] text-[#e0506a] leading-[0.88] left-[190px] top-[-10px] select-none">
+                ?
+              </span>
+              <span className="absolute font-display font-black text-[62px] text-[#e0506a] leading-[0.88] left-[-10px] top-[40px] select-none">
+                ?
+              </span>
+            </div>
+          </div>
         </div>
       </main>
 
