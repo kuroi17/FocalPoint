@@ -119,6 +119,8 @@ export default function StaffPage() {
                     <option value="Sci-Tech">Sci-Tech</option>
                     <option value="Sports">Sports</option>
                     <option value="Literary">Literary</option>
+                    <option value="Illustration">Illustration</option>
+                    <option value="Explainers">Explainers</option>
                   </select>
                 </div>
 

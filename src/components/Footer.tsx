@@ -40,6 +40,12 @@ export default function Footer() {
             <Link href="/literary" className="text-[14px] text-white hover:text-[#e0506a] tracking-[-0.14px] transition-colors">
               Literary
             </Link>
+            <Link href="/illustration" className="text-[14px] text-white hover:text-[#e0506a] tracking-[-0.14px] transition-colors">
+              Illustration
+            </Link>
+            <Link href="/explainers" className="text-[14px] text-white hover:text-[#e0506a] tracking-[-0.14px] transition-colors">
+              Explainers
+            </Link>
           </div>
 
           {/* About Links */}

@@ -36,7 +36,13 @@ export default function SectionHeroBanner({
           </nav>
 
           {/* Large Section Display Title */}
-          <h1 className="font-display font-black leading-[0.88] not-italic text-[#c0304f] text-[52px] sm:text-[90px] md:text-[130px] lg:text-[180px] xl:text-[240px] tracking-wide select-none">
+          <h1
+            className={`font-display font-black leading-[0.88] not-italic text-[#c0304f] ${
+              categoryName.length > 9
+                ? "text-[42px] sm:text-[70px] md:text-[100px] lg:text-[140px] xl:text-[180px]"
+                : "text-[52px] sm:text-[90px] md:text-[130px] lg:text-[180px] xl:text-[240px]"
+            } tracking-wide select-none break-words`}
+          >
             {categoryName.toUpperCase()}
           </h1>
 

@@ -38,7 +38,7 @@ export default function AboutDesks() {
       bgColor: "rgba(224,80,106,0.16)",
       borderColor: "rgba(224,80,106,0.45)",
       glyph: "F",
-      slug: "/feature",
+      slug: "/features",
     },
     {
       name: "SCIENCE",
@@ -77,13 +77,22 @@ export default function AboutDesks() {
       slug: "/research",
     },
     {
-      name: "CARTOONING",
-      description: "Editorial cartoons in one frame.",
+      name: "ILLUSTRATION",
+      description: "Editorial cartoons, comics and student art.",
       color: "#d9a441",
       bgColor: "rgba(217,164,65,0.16)",
       borderColor: "rgba(217,164,65,0.45)",
       glyph: "✎",
-      slug: "/gallery",
+      slug: "/illustration",
+    },
+    {
+      name: "EXPLAINERS",
+      description: "Guides, Q&As, and step-by-step breakdowns.",
+      color: "#2f8f83",
+      bgColor: "rgba(47,143,131,0.16)",
+      borderColor: "rgba(47,143,131,0.45)",
+      glyph: "✦",
+      slug: "/explainers",
     },
   ];
 

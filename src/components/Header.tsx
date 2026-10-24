@@ -86,6 +86,8 @@ export default function Header() {
   ];
 
   const moreLinks = [
+    { label: "Illustration Desk", href: "/illustration" },
+    { label: "Explainers", href: "/explainers" },
     { label: "Podcasts", href: "/podcasts" },
     { label: "Community", href: "/community" },
     { label: "Staff Desk", href: "/staff" },

@@ -72,6 +72,20 @@ export default function ScreensDirectoryPage() {
       category: "Main Editorial",
     },
     {
+      name: "Illustration Desk",
+      url: "/illustration",
+      description: "Editorial cartoons, satirical comic strips, infographics, and student visual journalism.",
+      badge: "Desk",
+      category: "Main Editorial",
+    },
+    {
+      name: "Explainers",
+      url: "/explainers",
+      description: "Step-by-step guides, budget breakdowns, and Q&A card stacks explaining campus issues.",
+      badge: "Desk",
+      category: "Main Editorial",
+    },
+    {
       name: "Gallery",
       url: "/gallery",
       description: "Photojournalism showcase with high-res photo stories and captions.",
